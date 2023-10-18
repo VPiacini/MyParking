@@ -1,0 +1,12 @@
+.loc-map {
+  height: 750px;
+  width: 150%;
+}
+
+.spot-map {
+  height: 700px;
+  width: 120%;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 20px;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyParking</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar bg-success fixed-top">
+      <span class="navbar-item mx-5">
+        <b>{{g.usuario.nome}}</b>
+      </span>
+      <a
+        href="#"
+        class="pe-auto fw-bold text-black"
+        onclick="goToLoc('/menu/<tipo>/<mensagem>')"
+        >MENU</a
+      >
+      <span class="navbar-item mx-5 align-self-end">
+        <b>Créditos disponiveis: {{g.usuario.creditos}}</b>
+      </span>
+    </nav>
+    <div
+      class="d-flex justify-content-center flex-column align-items-center bg-success min-vh-100"
+    >
+      <div class="w-75 bg-success-subtle rounded-5 p-5 shadow-lg">
+        <form method="POST" class="d-flex flex-column">
+          <div class="form-outline mb-4">
+            <label class="form-label" for="loginName">Data de entrada</label>
+            <div class="d-flex">
+              <input
+                id="dataEntrada"
+                class="form-control"
+                name="dataEntrada"
+                type="date"
+                onchange="atualizaPreco('{{ vaga.preço }}')"
+              />
+            </div>
+          </div>
+
+          <div class="form-outline mb-4">
+            <label class="form-label" for="loginPassword">Data de saida</label>
+            <div class="d-flex">
+              <input
+                id="dataSaida"
+                class="form-control"
+                type="date"
+                name="dataSaida"
+                placeholder="Password"
+                oninput="atualizaPreco('{{ vaga.preço }}')"
+              />
+            </div>
+          </div>
+
+          <div class="bg-primary-subtle rounded-2 p-2" id="conta" hidden>
+            <p class="h5">Valor total: R$ <span id="precoTotal"></span></p>
+            <p>
+              Numero de dais x preço: <span id="numdias"></span> x R$<span
+                id="preco"
+              ></span>
+              = <span id="precoTotal2"></span>
+            </p>
+            <p>Taxa de uso: R$<span id="taxa"></span></p>
+          </div>
+
+          <!-- Submit button -->
+          <button
+            id="botaoConfirma"
+            type="submit"
+            class="btn btn-primary btn-block m-4"
+            disabled
+          >
+            Confirmar
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script src="/static/script.js"></script>
+</html>

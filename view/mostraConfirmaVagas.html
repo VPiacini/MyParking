@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
+    />
+    <title>My Parking</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/main.css" />
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  </head>
+
+  <body class="bg-primary-subtle">
+    <nav class="navbar bg-success fixed-top">
+      <span class="navbar-item mx-5">
+        <b>{{g.usuario.nome}}</b>
+      </span>
+      <a
+        href="#"
+        class="pe-auto fw-bold text-black"
+        onclick="goToLoc('/menu/<tipo>/<mensagem>')"
+        >MENU</a
+      >
+    </nav>
+    <section class="">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col">
+            <p class="h2 m-3">Vagas a serem confirmadas</p>
+            <hr />
+            {% for spot in confirmVagas %}
+            <div class="parking-spot">
+              <p class="h3">{{ spot.nome}}</p>
+              <p></p>
+              <p>Endereço: {{ spot.endereço }}</p>
+              <p>Preço por dia: R$ {{ spot.preço }}</p>
+              <p>Latitude: {{ spot.latitude }}</p>
+              <p>Longitude: {{ spot.longitude }}</p>
+              <p>Tipo: {{ spot.tipo }}</p>
+              <p>Referencia: {{ spot.referencia }}</p>
+              <p>Adicional: {{ spot.adicional }}</p>
+              <form method="POST">
+                <input value="{{spot.id}}" name="vagaID" hidden />
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="opcao"
+                    id="flexRadioDefault1"
+                    value="rejeita"
+                  />
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Rejeita
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="opcao"
+                    id="flexRadioDefault2"
+                    value="aceita"
+                  />
+                  Aceita
+                  <label class="form-check-label" for="flexRadioDefault2">
+                  </label>
+                </div>
+
+                <button class="btn btn-primary">Enviar</button>
+                <hr />
+              </form>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="/static/script.js"></script>
+</html>

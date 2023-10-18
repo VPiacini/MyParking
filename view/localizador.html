@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
+    />
+    <title>My Parking</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/static/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body class="bg-primary-subtle">
+    <nav class="navbar bg-success fixed-top">
+      <span class="navbar-item mx-5">
+        <b>{{g.usuario.nome}}</b>
+      </span>
+      <a
+        href="#"
+        class="pe-auto fw-bold text-black"
+        onclick="goToLoc('/menu/<tipo>/<mensagem>')"
+        >MENU</a
+      >
+      <span class="navbar-item mx-5 align-self-end">
+        <b>Créditos disponiveis: {{g.usuario.creditos}}</b>
+      </span>
+    </nav>
+    <section>
+      <div class="container m-5">
+        <div class="row">
+          <div class="col">
+            <div>
+              <label for="distancia" class="form-label"
+                >Distância máxima para busca:</label
+              >
+              <input
+                type="range"
+                class="form-range"
+                min="0"
+                max="20000"
+                id="distancia"
+                oninput="this.nextElementSibling.value = this.value + ' m'"
+              />
+              <output>10000 m</output>
+            </div>
+            <div class="localizacao direita">
+              <button
+                onclick="useLocalizacaoAtual()"
+                class="btn btn-success mt-5"
+              >
+                Usar Localização Atual
+              </button>
+              <input
+                type="text"
+                id="endereco"
+                class="form-control mt-3"
+                placeholder="Insira o endereço"
+              />
+              <button
+                onclick="useEnderecoSelecionado()"
+                class="btn btn-primary mt-3"
+              >
+                Usar Endereço
+              </button>
+            </div>
+          </div>
+          <div class="col">
+            <div id="map" class="map loc-map position-sticky sticky-top"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCRG0bDaKGt359t4BvRq0pKiewIsbekuM&libraries=places"></script>
+    <script>
+      // Função para usar a localização atual do usuário
+      function useLocalizacaoAtual() {
+        if (navigator.geolocation) {
+          // Se o navegador suportar geolocalização
+          navigator.geolocation.getCurrentPosition(
+            function (position) {
+              const latitude = position.coords.latitude; // Latitude do usuário
+              const longitude = position.coords.longitude; // Longitude do usuário
+              const radius = document.getElementById('distancia').value; // Raio da busca
+              const parametros =
+                '?latitude=' +
+                latitude +
+                '&longitude=' +
+                longitude +
+                '&radius=' +
+                radius;
+              goToLoc('/mostraEstacionamentos', parametros); // Redireciona para a página de estacionamentos com os parâmetros
+            },
+            function (error) {
+              console.error(error); // Em caso de erro na obtenção da localização
+            }
+          );
+        } else {
+          console.error('Geolocalização não é suportada por esse browser.');
+        }
+      }
+
+      // Função para usar um endereço selecionado
+      function useEnderecoSelecionado() {
+        const address = document.getElementById('endereco').value; // Obtém o endereço inserido pelo usuário
+        const geocoder = new google.maps.Geocoder(); // Objeto para geocodificação
+        geocoder.geocode({ address: address }, function (results, status) {
+          if (status === google.maps.GeocoderStatus.OK) {
+            const latitude = results[0].geometry.location.lat(); // Latitude do endereço
+            const longitude = results[0].geometry.location.lng(); // Longitude do endereço
+            const radius = document.getElementById('distancia').value; // Raio da busca
+            const parametros =
+              '?latitude=' +
+              latitude +
+              '&longitude=' +
+              longitude +
+              '&radius=' +
+              radius;
+            goToLoc('/mostraEstacionamentos', parametros); // Redireciona para a página de estacionamentos com os parâmetros
+          } else {
+            console.error(
+              'Geocode não foi bem sucedido pelo seguinte motivo: ' + status
+            );
+          }
+        });
+      }
+
+      // Função para mostrar o mapa com marcador na posição dada
+      function showMap(latitude, longitude) {
+        const mapOptions = {
+          center: new google.maps.LatLng(latitude, longitude), // Define o centro do mapa
+          zoom: 15, // Define o nível de zoom
+        };
+        const map = new google.maps.Map(
+          document.getElementById('map'),
+          mapOptions
+        ); // Cria um mapa
+
+        new google.maps.Marker({
+          position: mapOptions.center, // Posição do marcador
+          map: map, // Mapa no qual o marcador será exibido
+        });
+      }
+
+      // Autocomplete para preenchimento automático de endereços
+      const autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById('endereco'), // Elemento de entrada de endereço
+        {
+          types: ['geocode'], // Tipo de sugestões (endereços)
+        }
+      );
+
+      // Listener para quando um local é selecionado no autocomplete
+      autocomplete.addListener('place_changed', function () {
+        const place = autocomplete.getPlace();
+        if (!place.geometry) {
+          console.error('Nenhum local selecionado.');
+          return;
+        }
+
+        const latitude = place.geometry.location.lat(); // Latitude do local selecionado
+        const longitude = place.geometry.location.lng(); // Longitude do local selecionado
+        showMap(latitude, longitude); // Mostra o mapa com o marcador na posição do local
+      });
+    </script>
+  </body>
+  <script src="/static/script.js"></script>
+</html>
