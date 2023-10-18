@@ -1,0 +1,47 @@
+nome;endereco;disponibilidade;preco;latitude;longitude;locador;avaliacao;tipo_vaga;ponto_de_referencia;adicional;id;numeroAvaliacoes
+Vaga 4;Shopping Praia de Belas;disponivel;30;-30.0470;-51.2360;carlosoliveira;4.22;carro;Vaga 4;aleatorio;4;4
+Vaga 5;Praca da Matriz;indisponivel;10;-30.0330;-51.2280;user;4.5;camionete;Vaga 5;aleatorio;5;1
+Vaga 8;Parque Farroupilha;disponivel;7;-30.0380;-51.2110;amandaalmeida;4.85;camionete;Vaga 8;aleatorio;8;1
+Vaga 9;MARGS - Museu de Arte do RS;disponivel;25;-30.0310;-51.2230;fernandosouza;3.10;caminhao;Vaga 9;aleatorio;9;1
+Vaga 10;PUCRS - Pontificia Universidade Catolica;disponivel;12;-30.0490;-51.2170;isabelarodrigues;4.75;carro;Vaga 10;aleatorio;10;1
+Vaga 11;Gasometro F.C.;disponivel;9;-30.0250;-51.2360;carlosoliveira;4.20;carro;Vaga 11;aleatorio;11;1
+Vaga 12;Teatro Sao Pedro;disponivel;18;-30.0280;-51.2350;user;4.90;camionete;Vaga 12;aleatorio;12;1
+Vaga 13;Igreja Nossa Senhora das Dores;disponivel;6;-30.0330;-51.2320;carlosoliveira;3.75;caminhao;Vaga 13;aleatorio;13;1
+Vaga 14;Parque Marinha do Brasil;disponivel;10;-30.0300;-51.2330;user;4.60;carro;Vaga 14;aleatorio;14;1
+Vaga 15;Museu Iber Camargo;disponivel;22;-30.0420;-51.2310;user;4.10;camionete;Vaga 15;aleatorio;15;1
+Vaga 16;Barra Shopping Sul;disponivel;28;-30.0510;-51.2300;carlosoliveira;3.80;caminhao;Vaga 16;aleatorio;16;1
+Vaga 17;Estadio Beira-Rio;disponivel;14;-30.0492;-51.2270;rafaelferreira;4.70;carro;Vaga 17;aleatorio;17;1
+Vaga 18;Arena do Gremio;disponivel;32;-30.0751;-51.2381;mariasantos;4.40;camionete;Vaga 18;aleatorio;18;1
+Vaga 19;Gasometro F.C.;disponivel;8;-30.0250;-51.2360;mariasantos;3.25;caminhao;Vaga 19;aleatorio;19;1
+Vaga 20;Teatro Sao Pedro;disponivel;15;-30.0280;-51.2350;isabelarodrigues;4.85;carro;Vaga 20;aleatorio;20;1
+Vaga 21;Brique da Redencao;disponivel;12;-30.0390;-51.2060;carlosoliveira;4.30;camionete;Vaga 21;aleatorio;21;1
+Vaga 22;Praca Garibaldi;disponivel;7;-30.0280;-51.2140;mariasantos;3.60;caminhao;Vaga 22;aleatorio;22;1
+Vaga 23;Teatro Renascenca;disponivel;14;-30.0390;-51.2060;user;4.75;carro;Vaga 23;aleatorio;23;1
+Vaga 24;Memorial do Rio Grande do Sul;disponivel;9;-30.0300;-51.2200;isabelarodrigues;4.10;camionete;Vaga 24;aleatorio;24;1
+Vaga 25;Casa de Cultura Mario Quintana;disponivel;20;-30.0370;-51.2280;mariasantos;3.75;caminhao;Vaga 25;aleatorio;25;1
+Vaga 26;Rua da Praia;disponivel;11;-30.0330;-51.2350;user;4.60;carro;Vaga 26;aleatorio;26;1
+Vaga 27;Planetario da UFRGS;disponivel;7;-30.0410;-51.2100;user;4.90;camionete;Vaga 27;aleatorio;27;1
+Vaga 28;Redencao - Parque Farroupilha;disponivel;13;-30.0340;-51.2030;user;3.80;caminhao;Vaga 28;aleatorio;28;1
+Vaga 29;Centro Historico de Porto Alegre;disponivel;16;-30.0360;-51.2250;user;4.20;carro;Vaga 29;aleatorio;29;1
+Vaga 30;Teatro de Arena;disponivel;10;-30.0360;-51.2260;user;4.90;camionete;Vaga 30;aleatorio;30;1
+Vaga 31;Memorial do Rio Grande do Sul;disponivel;12;-30.0300;-51.2200;isabelarodrigues;4.75;carro;Vaga 31;aleatorio;31;1
+Vaga 32;Casa de Cultura Mario Quintana;disponivel;19;-30.0370;-51.2280;user;4.20;camionete;Vaga 32;aleatorio;32;1
+Vaga 33;Rua da Praia;disponivel;9;-30.0330;-51.2350;user;3.90;caminhao;Vaga 33;aleatorio;33;1
+Vaga 34;Planetario da UFRGS;disponivel;6;-30.0410;-51.2100;user;4.60;carro;Vaga 34;aleatorio;34;1
+Vaga 35;Redencao - Parque Farroupilha;disponivel;11;-30.0340;-51.2030;user;4.80;camionete;Vaga 35;aleatorio;35;1
+Vaga 36;Centro Historico de Porto Alegre;disponivel;14;-30.0360;-51.2250;user;3.60;caminhao;Vaga 36;aleatorio;36;1
+Vaga 37;Teatro de Arena;disponivel;8;-30.0360;-51.2260;user;4.70;carro;Vaga 37;aleatorio;37;1
+Vaga 38;Viaduto Octavio Rocha;disponivel;16;-30.0310;-51.2300;user;4.40;camionete;Vaga 38;aleatorio;38;1
+Vaga 39;Solar dos Camara;disponivel;13;-30.0260;-51.2300;user;3.25;caminhao;Vaga 39;aleatorio;39;1
+Vaga 40;Hospital de Clinicas de Porto Alegre;disponivel;10;-30.0330;-51.2120;user;4.85;carro;Vaga 40;aleatorio;40;1
+Vaga 41;Hospital Moinhos de Vento;disponivel;21;-30.0280;-51.2040;user;4.10;camionete;Vaga 41;aleatorio;41;1
+Vaga 42;Terminal Rodoviario de Porto Alegre;disponivel;17;-30.0260;-51.2300;user;3.75;caminhao;Vaga 42;aleatorio;42;1
+Vaga 43;Casa de Cultura Hip Hop de Porto Alegre;disponivel;8;-30.0310;-51.2130;user;4.60;carro;Vaga 43;aleatorio;43;1
+Vaga 44;Arena do Gigantinho;disponivel;15;-30.0430;-51.2260;mariasantos;4.90;camionete;Vaga 44;aleatorio;44;1
+Vaga 45;Praca da Alfandega;disponivel;11;-30.0310;-51.2270;user;3.80;caminhao;Vaga 45;aleatorio;45;1
+Vaga 46;Casa de Cultura Mario Quintana - 7 andar;disponivel;9;-30.0320;-51.2280;user;4.20;carro;Vaga 46;aleatorio;46;1
+Vaga 47;Parque Mauricio Sirotsky Sobrinho;disponivel;18;-30.0290;-51.2370;isabelarodrigues;4.75;camionete;Vaga 47;aleatorio;47;1
+Vaga 48;Marinha do Brasil - Veleiros do Sul;disponivel;7;-30.0340;-51.2280;user;3.90;caminhao;Vaga 48;aleatorio;48;1
+Vaga 49;Clube Farrapos Rugby;disponivel;13;-30.0160;-51.1810;mariasantos;4.60;carro;Vaga 49;aleatorio;49;1
+Vaga 50;Associacao Leopoldina Juvenil;disponivel;20;-30.0160;-51.1830;isabelarodrigues;4.80;camionete;Vaga 50;aleatorio;50;1
+Vaga 51;Rua Coronel Jose Diehl, 193;disponivel;12;-52.0949489;-29.4699524;user;5;carro;Edificio Urbano Station; ;51;0
